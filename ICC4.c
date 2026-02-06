@@ -5,7 +5,7 @@
 
 int main(void) {
     int width = 0, repetitions = 0;
-    char line[width+2];
+    char line[width+3];
 
     scanf(" %d %d", &width, &repetitions);
     while (getchar() != '\n');
@@ -14,6 +14,7 @@ int main(void) {
         line[i] = ' ';
     }
     line[width+1] = '|';
+    line[width+2] = '\0';
 
     for (int i = 0; i < repetitions; i++) {
         for (int j = width; j >= 0; j--) {
