@@ -7,7 +7,8 @@ int main(void) {
     int width = 0, repetitions = 0;
     char line[width+2];
 
-    scanf(" %d %d ", &width, &repetitions);
+    scanf(" %d %d", &width, &repetitions);
+    while (getchar() != '\n');
 
     for (int i = 0; i <= width; i++) {
         line[i] = ' ';
@@ -15,12 +16,12 @@ int main(void) {
     line[width+1] = '|';
 
     for (int i = 0; i < repetitions; i++) {
-        for (int j = 0; j < width; j++) {
+        for (int j = width; j >= 0; j--) {
             line[j] = 'o';
             printf("%s\n", line);
             line[j] = ' ';
         }
-        for (int j = width; j >= 0; j--) {
+        for (int j = 1; j < width; j++) {
             line[j] = 'o';
             printf("%s\n", line);
             line[j] = ' ';
